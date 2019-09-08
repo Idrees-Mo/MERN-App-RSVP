@@ -142,7 +142,7 @@ form {
 
  
 
-   /* toggel ************************************************** */
+   /* ************* toggel *************************** */
 
    
 .switch {
@@ -208,7 +208,7 @@ input:checked + .slider:before {
 }
 
 
-/* // ************************************************************************ */
+/************************************************************************* */
 .lead{
   color:var(--primary-color);
   margin-bottom:2.5rem ;
@@ -305,7 +305,7 @@ td {
 
 
 
- /* *****************guests style */
+ /* *****************guests style  **********************/
   .guests {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -316,7 +316,7 @@ td {
   }
 
 
-/* guest card */
+/****************************** guest card **********************/
 .guest-card {
  color:var(--primary-color);
  background: var(--light-color);
@@ -398,7 +398,7 @@ cursor: pointer;
    padding: 0 0.5rem
  }
 
-/* register and login  */
+/************************************ register and login  ***************************/
 .register , .login {
   color: var(--primary-color);
   text-align: center;
@@ -556,7 +556,7 @@ table{
 
 
 
-/* Animation (Add After) */
+/* **************************Animation (Add After) *********************** */
 .item-enter {
   opacity: 0;
 }

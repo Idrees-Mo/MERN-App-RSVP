@@ -23,12 +23,12 @@ const CountGuest = () => {
             <th>Attending</th>
           </tr>
           <tr>
-            <th>non-veg</th>
+            <th>Non-veg</th>
             <td>{countByDiet('Non-Veg').total}</td>
             <td>{countByDiet('Non-Veg').confirmed}</td>
           </tr>
           <tr>
-            <th>vegan</th>
+            <th>Vegan</th>
             <td>{countByDiet('Vegan').total}</td>
             <td>{countByDiet('Vegan').confirmed}</td>
           </tr>

@@ -17,14 +17,18 @@ const Home = () => {
   return (
     <div>
       <div className="main">
+
         <div className="filter">
           <FilterGuest />
           <SearchGuest />
         </div>
+
         <GuestForm />
         <CountGuest />
+
       </div>
       <GuestsList />
+
     </div>
   )
 }

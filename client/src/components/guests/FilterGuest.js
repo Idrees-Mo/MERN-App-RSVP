@@ -9,7 +9,7 @@ const FilterGuest = () => {
         <input type="checkbox" onChange={() => toggleGuestFilter()} />
         <span class="slider round"></span>
       </label>
-      <p className="lead">Show confirmed only!</p>
+      <p className="lead">Show attending only!</p>
     </div>
   )
 }
