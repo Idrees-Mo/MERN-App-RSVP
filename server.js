@@ -14,6 +14,9 @@ app.use('/register', require('./routes/register'))
 app.use('/auth', require('./routes/auth'))
 app.use('/guests', require('./routes/guests'))
 
+app.get('/', (req, res) => {
+  res.json({ msg: 'Welcome to Party RSVP app' })
+})
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
