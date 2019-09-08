@@ -15,7 +15,7 @@ const Home = () => {
     // eslint-disable-next-line
   }, [])
   return (
-    <div>
+    <div className="app-container">
       <div className="main">
 
         <div className="filter">

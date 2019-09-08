@@ -21,13 +21,11 @@ function App() {
         <Router>
           <div>
             <Navbar />
-            <div className="app-container" >
-              <Switch>
-                <PrivateRoute exact path='/' component={Home} />
-                <Route exact path='/register' component={Register} />
-                <Route exact path='/login' component={Login} />
-              </Switch>
-            </div>
+            <Switch>
+              <PrivateRoute exact path='/' component={Home} />
+              <Route exact path='/register' component={Register} />
+              <Route exact path='/login' component={Login} />
+            </Switch>
           </div>
         </Router>
       </GuestState>
