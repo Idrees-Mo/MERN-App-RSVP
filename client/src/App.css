@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
+ :root {
+  --primary-color: #043a5a;
+  --dark-color: #333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #c0bfbd;
+  --xxx-color:#b5b8b7;
+}
+
+/**************Navbar ******************/
+.navbar, .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  color:var(--light-color);
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.logo p {
+  font-size: 0.9rem;
+  margin-top:0.5rem;
+  color:#ccc
+}
+.logo span {
+  color: rgb(255, 57, 22)
+}
+.navbar ul {
+  display: flex;
+ }
+ .navbar i, h1 {
+  padding: 0 1rem
+}
+li{
+  list-style: none;
+  padding: 0 1rem;
+  transition: all 0.3s ease 0s;
+}
+a{
+  text-decoration: none;
+  color:var(--light-color)
+}
+li i:hover ,a:hover{
+  opacity: 0.5;  
+  cursor: pointer;
+}
+/* **************app ************************ */
+.app-container{
+  max-width: 90rem;
+  margin: auto;
+  }
+ 
+  
+.main {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end
+
+}
+
+
+/* ****************** GuestForm************** */
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+   }
+   .invite-section {
+     flex-basis:33%;
+   }
+ .invite-section h1 {
+   color: var(--primary-color);
+   padding: 0;
+   margin:1rem 0
+ }
+ form input[type=text] , form input[type=email] , form input[type=password]{
+   border:none;
+   height: 2.5rem;
+  font-size:1.2rem;
+  border-bottom: solid 1px gray;
+ }
+ form input[type=text]:focus , form input[type=email]:focus , form input[type=password]:focus{
+  outline: none !important;
+  border-bottom:1px solid var(--primary-color);   
+}
+ .options-label {
+   display: block;
+   padding-top: 1rem;
+   color: var(--primary-color);
+   font-weight: bold   
+ }
+ 
+.options {
+  display: flex;
+  justify-content: space-between; 
+  padding-top:1rem;
+ }
+.options label {
+  cursor: pointer;
+    }
+.options label:hover {
+      color:rgb(150,150,150);
+      transition: all 0.3s ease 0s;
+        }
+.options i {
+  margin-right: 0.7rem;
+  transition: all 0.3s ease 0s;
+}
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color:var(--light-color);
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+    margin-top:1rem;
+      }
+    .btn:hover{
+    opacity: 0.9;
+  }
+
+ 
+
+   /* toggel ************************************************** */
+
+   
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left:10px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: -10px;
+  bottom: -4px;
+  border:1px solid rgb(226, 225, 225);
+ background-color: rgb(241, 241, 241);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* // ************************************************************************ */
+.lead{
+  color:var(--primary-color);
+  margin-bottom:2.5rem ;
+  margin-top:0.7rem
+}
+
+.search{
+  padding: 0.3rem 3rem;
+  border-radius: 20px;
+  border:1px solid #ccc;
+       }
+ .search:focus {
+  outline: none !important;
+ }
+ .search-icon{
+   margin-left:-2rem;
+   display: inline;
+   color:#ccc;
+   z-index: 100;
+ }
+
+ /********************* counter tabel styles ************** */
+table {
+  border-collapse: collapse;
+ width: 100%;
+ text-transform: capitalize;
+ color: var(--primary-color);
+ font-size: bold
+}
+td , th{
+ text-align: center;
+ padding: 0.7rem 1.6rem;
+}
+th{
+ text-align: left;
+}
+tr:nth-child(odd) {
+ background-color: var(--light-color);
+}
+td {
+  transition: all 0.3s ease 0s;
+}
+
+/* ************* radio button *******************/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+  border-radius: 50%;
+  transition: all 0.2s ease 0s;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+
+ /* *****************guests style */
+  .guests {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 90%;
+    margin: auto;
+    margin-top:3.5rem;
+    padding: 1rem
+  }
+
+
+/* guest card */
+.guest-card {
+ color:var(--primary-color);
+ background: var(--light-color);
+ margin: 0.7rem 0;
+ position: relative;
+ max-width: 26rem;
+ line-height: 1.6;
+ margin-right:1rem;
+}
+.card-head {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ background: #ccc;
+ padding: 0.2rem
+}
+.card-head input[type="checkbox"]{
+ display: none
+ }
+.card-head i, .card-head label {
+ color:rgb(150,150, 150);
+ padding: 0.1rem;
+ cursor: pointer;
+}
+.card-head i:hover  {
+ color:var(--primary-color);
+ opacity: 0.8;
+ transition: all 0.1s ease 0s;
+}
+.card-head .remove:hover {
+ color:red;
+ opacity: 0.7;
+ transition: all 0.1s ease 0s;
+}
+.confirm {
+color:var(--primary-color) !important;
+}
+.card-head label {
+  margin-right: 0.2rem
+}
+.card-head button {
+border:none;
+padding:0.4rem;
+cursor: pointer;
+}
+.card-head button:focus{
+ outline: none
+}
+ .card-body{
+  padding:1.2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column
+}
+.card-body h2 {
+ margin-top:1rem;
+ padding: 0
+}
+
+
+.badge {
+ position: absolute;
+ right:0;
+ top:0;
+ font-size: 0.8rem;
+ padding: 0.2rem 1rem;
+ text-align: center;
+ margin: 0.3rem;
+ background: #ccc;
+ color: #fff;
+ border-radius: 2px;
+}
+.contact {
+  display: flex;
+  align-items: center
+      }
+   .contact p {
+     font-weight: bold;
+   padding: 0 0.5rem
+ }
+
+/* register and login  */
+.register , .login {
+  color: var(--primary-color);
+  text-align: center;
+  width:33%;
+  margin: 12rem auto;
+  }
+  .clear {
+   position: absolute;
+   display: inline;
+   color:var(--primary-color);
+   background: rgb(189, 187, 187);
+   bottom:0;
+   right: 0;
+  }
+  .no-guest {
+    text-align: center;
+    padding-right: 6rem;
+    margin-top: 3rem
+  }
+  .question {
+    color: #333;
+    margin: 1.5rem 0
+  }
+  .question a {
+    color: var(--primary-color);
+      }
+  .danger {
+    background-color: rgb(207, 58, 58);
+    width: 100%;
+    margin-bottom: 0.3rem;
+    margin-top:0rem;
+    text-transform: capitalize;
+    padding:0.5rem;
+    cursor:initial;
+    border:none;
+    color:#fff;
+    font:inherit
+    
+    }
+  .danger span {
+    float: right;
+    cursor: pointer;
+  }
+  .red{
+    background: rgb(248, 139, 139)
+  }
+  .green{
+    background: rgb(128, 206, 128)
+  }
+  .seaGreen{
+    background: rgb(107, 161, 197)
+  }
+ @media(max-width: 1300px){
+         .main{
+            justify-content: space-between;
+            width:95%;
+            margin:auto
+   }
+   .guests {
+    grid-template-columns: repeat(3, 1fr);
+  
+   }
+  
+ }
+
+ @media(max-width: 1100px){
+  .register , .login {
+    width: 40%
+  }
+  .main{
+    flex-wrap:wrap;
+    justify-content: space-around
+}
+table  {
+  flex:1;
+  margin: 0 1rem;
+}
+.invite-section{
+  flex:2;
+  padding: 1rem;
+  margin: 0 1rem;
+}
+.toggle{
+  display: flex;
+  align-items: baseline;
+  }
+  .toggle p{
+    margin-left: 0.7rem
+  }
+
+.filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: baseline;
+  margin-top:1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  order:3
+}
+.guests {
+margin-top:0;
+}
+.guest-card h1 {
+  font-size: 1.5rem
+}
+}
+
+@media(max-width:900px){
+  
+  .guests {
+    grid-template-columns: repeat(2, 1fr);
+  
+   }
+}
+@media(max-width:760px){
+
+.sm-hide{
+    display: none;
+    }
+    li {
+      padding:0.2rem
+    }
+    .register , .login {
+      width: 70%
+    }
+  .main , .filter , .guests{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+  }
+  .invite-section {
+    width: 100%;
+    margin: auto
+  }
+  table{
+    font-size:12px;
+  }
+  .navbar {
+ padding: 1rem 0;
+ font-size: 12px
+   }
+   .navbar h1 {
+     font-size: 14px
+   }
+  
+  .guest-card{
+    width: 100%
+  }
+table{
+  margin:0
+}
+}
+
+
+
+/* Animation (Add After) */
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
