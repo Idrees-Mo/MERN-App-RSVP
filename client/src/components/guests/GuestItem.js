@@ -1,24 +1,16 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import GuestContext from '../../comtext/guestContext/guestContext'
 
 const GuestItem = ({ guest }) => {
-  const [confirm, setConfirm] = useState(guest)
-  const { removeGuest, edit_Guest, clearEdit, update_Guest2 } = useContext(GuestContext)
+  const { removeGuest, edit_Guest, clearEdit, update_Guest } = useContext(GuestContext)
   const { _id, name, phone, diet, isconfirmed } = guest
 
-  useEffect(() => {
-    setConfirm({
-      ...confirm,
-      isconfirmed: !confirm.isconfirmed
-    })
-    // eslint-disable-next-line
-  }, [isconfirmed])
   const handleRemove = () => {
     removeGuest(_id)
     clearEdit()
   }
   const onchange = () => {
-    update_Guest2(confirm)
+    update_Guest({ ...guest, isconfirmed: !isconfirmed })
   }
 
   return (
@@ -44,7 +36,6 @@ const GuestItem = ({ guest }) => {
       </div>
     </div>
   )
-
 }
 
 export default GuestItem

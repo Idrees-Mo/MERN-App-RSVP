@@ -36,7 +36,7 @@ const Login = (props) => {
     <div className="login">
       <h1>Login</h1>
       <form onSubmit={onsubmit}>
-        <input type="email" name="email" placeholder="Email" value={email} onChange={onchange} required />
+        <input type="email" name="email" placeholder="Email" value={email} onChange={onchange} />
         <input type="password" name="password" placeholder="Password" value={password} onChange={onchange} required />
         <input type="submit" value="Login" className="btn" />
       </form>

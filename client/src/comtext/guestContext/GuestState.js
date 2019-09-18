@@ -82,7 +82,6 @@ const GuestState = (props) => {
   // update guest
 
   const update_Guest = async (guest) => {
-    console.log(guest)
     const config = {
       headers: {
         'Content-Type': 'application/json'
@@ -90,31 +89,6 @@ const GuestState = (props) => {
     }
     try {
       const res = await axios.put(`/guests/${guest._id}`, guest, config)
-      console.log(res.data)
-      dispatch({
-        type: UPDATE_GUEST,
-        payload: res.data
-      })
-      getGuests()
-
-    } catch (err) {
-      dispatch({
-        type: GUESTS_ERROR,
-        payload: err.response
-      })
-    }
-  }
-  const update_Guest2 = async (guest) => {
-    console.log(guest)
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    const confirmData = { "isconfirmed": guest.isconfirmed }
-    try {
-      const res = await axios.put(`/guests/${guest._id}`, confirmData, config)
-      console.log(res.data)
       dispatch({
         type: UPDATE_GUEST,
         payload: res.data
@@ -179,7 +153,6 @@ const GuestState = (props) => {
       edit_Guest,
       clearEdit,
       update_Guest,
-      update_Guest2,
       toggleGuestFilter,
       search_Guest,
       clearSearchGuest,
