@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import AuthContext from '../../comtext/authContext/authContext'
 
-
 const Register = (props) => {
   const { register, isAuthencated, error, clearErrors, setError } = useContext(AuthContext)
   useEffect(() => {
@@ -24,11 +23,10 @@ const Register = (props) => {
       clearErrors()
     }
   }
-  console.log(error)
   onsubmit = (e) => {
     e.preventDefault()
     if (password !== password2) {
-      setError('Password do not match')
+      setError('Password does not match')
     } else {
       register({
         name,

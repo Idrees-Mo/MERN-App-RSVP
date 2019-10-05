@@ -69,12 +69,7 @@ router.put('/:id', auth, async (req, res) => {
   const { name, phone, diet, isconfirmed } = req.body
 
   // build Guest object 
-  const guestFields = {};
-  if (name) guestFields.name = name;
-  if (phone) guestFields.phone = phone;
-  if (diet) guestFields.diet = diet;
-  if (isconfirmed) guestFields.isconfirmed = isconfirmed;
-  if (!isconfirmed) guestFields.isconfirmed = isconfirmed;
+  const guestFields = { name, phone, diet, isconfirmed };
 
   try {
     let guest = await Guest.findById(req.params.id)

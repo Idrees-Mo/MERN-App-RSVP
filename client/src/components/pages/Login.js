@@ -8,6 +8,8 @@ const Login = (props) => {
     if (isAuthencated) {
       props.history.push('/')
       clearErrors()
+    } else {
+      clearErrors()
     }
     // eslint-disable-next-line
   }, [isAuthencated, props.history])
