@@ -10,9 +10,9 @@ const Guest = require('../models/Guest');
 // @route Get /guests
 // @des Get guests
 // @access Private
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
-    const guests = await Guest.find();
+    const guests = await Guest.find({ user: req.user.id });
     res.json(guests);
   } catch (err) {
     console.err(err.message);
