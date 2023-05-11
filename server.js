@@ -1,19 +1,23 @@
-const express = require('express')
-const connectDB = require('./config/db')
+const express = require('express');
+const connectDB = require('./config/db');
 const path = require('path');
-const app = express()
+const app = express();
 
-//connect to database 
-connectDB()
+//connect to database
+connectDB();
 
 //Init Middlewares
-app.use(express.json({ extended: false }))
+app.use(express.json({ extended: false }));
 
 // define routes
-app.use('/register', require('./routes/register'))
-app.use('/auth', require('./routes/auth'))
-app.use('/guests', require('./routes/guests'))
-
+app.use('/register', require('./routes/register'));
+app.use('/auth', require('./routes/auth'));
+app.use('/guests', require('./routes/guests'));
+app.get('/', (req, res) => {
+  res.json({
+    greeting: 'Hello World!!'
+  });
+});
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -24,5 +28,5 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
-const PORT = process.env.PORT || 5000
-app.listen(PORT, () => console.log(`server started at port ${PORT}`))
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`server started at port ${PORT}`));
