@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../comtext/authContext/authContext';
 
 const Login = (props) => {
-  const { login, isAuthencated, error, clearErrors } = useContext(AuthContext);
+  const { login, isAuthencated, error, clearErrors, loading } =
+    useContext(AuthContext);
   useEffect(() => {
     if (isAuthencated) {
       props.history.push('/');
@@ -33,6 +34,15 @@ const Login = (props) => {
     login({
       email,
       password
+    });
+    clearErrors();
+  };
+  const loginAsGuest = () => {
+    console.warn(loading);
+
+    login({
+      email: 'test@test.com',
+      password: 'test123'
     });
     clearErrors();
   };
@@ -70,16 +80,16 @@ const Login = (props) => {
       <div>
         <br />
         <p>
-          Hi there, to test the app as a guest user, please use the following
-          credentials or signup, Thanks.
+          Hi there, to test the app as a guest user, please click the following
+          button or signup, Thanks.
         </p>
-        <br />
-        <h3>
-          Email: <span>test@test.com</span>
-        </h3>
-        <h3>
-          Password: <span>test123</span>
-        </h3>
+        <button
+          onClick={() => loginAsGuest()}
+          className="btn"
+          disabled={loading}
+        >
+          Login as a guest
+        </button>
       </div>
     </div>
   );
