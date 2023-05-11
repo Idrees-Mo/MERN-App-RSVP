@@ -12,7 +12,7 @@ const Guest = require('../models/Guest');
 // @access Private
 router.get('/', async (req, res) => {
   try {
-    const guests = await Guest.find({ user: req.user.id });
+    const guests = await Guest.find();
     res.json(guests);
   } catch (err) {
     console.err(err.message);
