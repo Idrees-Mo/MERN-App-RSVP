@@ -18,7 +18,7 @@ import {
 
 const GuestState = (props) => {
   // Base URL
-  const URL = 'https://real-tan-goat.cyclic.app';
+  const URL = 'https://rsvp-api.onrender.com';
 
   const intialState = {
     guestFilter: false,

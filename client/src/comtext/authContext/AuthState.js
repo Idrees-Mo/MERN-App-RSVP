@@ -16,7 +16,7 @@ import {
 
 const AuthState = (props) => {
   // Base URL
-  const URL = 'https://real-tan-goat.cyclic.app';
+  const URL = 'https://rsvp-api.onrender.com';
 
   const intialState = {
     token: localStorage.getItem('token'),
