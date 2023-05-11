@@ -7,7 +7,12 @@ const app = express();
 //connect to database
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      'https://645cd1f1d2d1ff0932c64700--flourishing-bunny-beef8b.netlify.app'
+  })
+);
 
 //Init Middlewares
 app.use(express.json({ extended: false }));
