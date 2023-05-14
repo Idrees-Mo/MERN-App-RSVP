@@ -18,7 +18,8 @@ import {
 
 const GuestState = (props) => {
   // Base URL
-  const URL = 'https://rsvp-api.onrender.com';
+  // const URL = 'https://rsvp-api.onrender.com';
+  const URL = 'https://anxious-girdle.cyclic.app';
 
   const intialState = {
     guestFilter: false,

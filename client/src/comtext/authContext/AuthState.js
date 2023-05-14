@@ -16,7 +16,8 @@ import {
 
 const AuthState = (props) => {
   // Base URL
-  const URL = 'https://rsvp-api.onrender.com';
+  // const URL = 'https://rsvp-api.onrender.com';
+  const URL = 'https://anxious-girdle.cyclic.app';
 
   const intialState = {
     token: localStorage.getItem('token'),
