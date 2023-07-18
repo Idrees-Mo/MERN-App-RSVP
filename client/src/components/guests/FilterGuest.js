@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import GuestContext from '../../comtext/guestContext/guestContext';
+import React, { useContext } from "react";
+import GuestContext from "../../context/guestContext/guestContext";
 
 const FilterGuest = () => {
   const { toggleGuestFilter } = useContext(GuestContext);

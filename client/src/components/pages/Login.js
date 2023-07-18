@@ -1,13 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import AuthContext from '../../comtext/authContext/authContext';
+import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import AuthContext from "../../context/authContext/authContext";
 
 const Login = (props) => {
   const { login, isAuthencated, error, clearErrors, loading } =
     useContext(AuthContext);
   useEffect(() => {
     if (isAuthencated) {
-      props.history.push('/');
+      props.history.push("/");
       clearErrors();
     } else {
       clearErrors();
@@ -15,15 +15,15 @@ const Login = (props) => {
     // eslint-disable-next-line
   }, [isAuthencated, props.history]);
   const [user, setUser] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
   const { email, password } = user;
 
   const onchange = (e) => {
     setUser({
       ...user,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
     if (error !== null) {
       clearErrors();
@@ -33,7 +33,7 @@ const Login = (props) => {
     e.preventDefault();
     login({
       email,
-      password
+      password,
     });
     clearErrors();
   };
@@ -41,8 +41,8 @@ const Login = (props) => {
     console.warn(loading);
 
     login({
-      email: 'test@test.com',
-      password: 'test123'
+      email: "test@test.com",
+      password: "test123",
     });
     clearErrors();
   };

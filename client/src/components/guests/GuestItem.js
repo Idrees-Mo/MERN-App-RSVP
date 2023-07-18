@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import GuestContext from '../../comtext/guestContext/guestContext';
+import React, { useContext } from "react";
+import GuestContext from "../../context/guestContext/guestContext";
 
 const GuestItem = ({ guest }) => {
   const { removeGuest, edit_Guest, clearEdit, update_Guest } =
@@ -18,10 +18,10 @@ const GuestItem = ({ guest }) => {
     <div className="guest-card">
       <div className="card-head">
         <div>
-          <label className={`${isconfirmed && 'confirm'}`}>
+          <label className={`${isconfirmed && "confirm"}`}>
             Confirmed
-            <i className={`fas fa-check-square ${isconfirmed && 'confirm'}`}>
-              <input type="checkbox" onChange={onchange} />{' '}
+            <i className={`fas fa-check-square ${isconfirmed && "confirm"}`}>
+              <input type="checkbox" onChange={onchange} />{" "}
             </i>
           </label>
         </div>
@@ -41,12 +41,12 @@ const GuestItem = ({ guest }) => {
         <h2>{name}</h2>
         <span
           className={
-            'badge ' +
-            (diet === 'Vegan'
-              ? 'green'
-              : diet === 'Non-Veg'
-              ? 'red'
-              : 'seaGreen')
+            "badge " +
+            (diet === "Vegan"
+              ? "green"
+              : diet === "Non-Veg"
+              ? "red"
+              : "seaGreen")
           }
         >
           {diet}

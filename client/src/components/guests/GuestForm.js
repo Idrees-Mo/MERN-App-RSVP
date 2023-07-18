@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import GuestContext from '../../comtext/guestContext/guestContext';
+import React, { useContext, useState, useEffect } from "react";
+import GuestContext from "../../context/guestContext/guestContext";
 
 const GuestForm = () => {
   const context = useContext(GuestContext);
@@ -10,23 +10,23 @@ const GuestForm = () => {
       setGuest(editGuest);
     } else {
       setGuest({
-        name: '',
-        phone: '',
-        diet: 'Non-Veg'
+        name: "",
+        phone: "",
+        diet: "Non-Veg",
       });
     }
   }, [editGuest, context]);
 
   const [guest, setGuest] = useState({
-    name: '',
-    phone: '',
-    diet: 'Non-Veg'
+    name: "",
+    phone: "",
+    diet: "Non-Veg",
   });
   const { name, phone, diet } = guest;
   const onchange = (e) => {
     setGuest({
       ...guest,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
   const onsubmit = (e) => {
@@ -38,14 +38,14 @@ const GuestForm = () => {
       clearEdit();
     }
     setGuest({
-      name: '',
-      phone: '',
-      diet: 'Non-Veg'
+      name: "",
+      phone: "",
+      diet: "Non-Veg",
     });
   };
   return (
     <div className="invite-section">
-      <h1>{editGuest !== null ? 'Edit Guest' : 'Invite Someone'}</h1>
+      <h1>{editGuest !== null ? "Edit Guest" : "Invite Someone"}</h1>
       <form onSubmit={onsubmit}>
         <input
           type="text"
@@ -72,7 +72,7 @@ const GuestForm = () => {
               name="diet"
               value="Non-Veg"
               onChange={onchange}
-              checked={diet === 'Non-Veg'}
+              checked={diet === "Non-Veg"}
             />
             <span className="checkmark"></span>
           </label>
@@ -83,7 +83,7 @@ const GuestForm = () => {
               name="diet"
               value="Vegan"
               onChange={onchange}
-              checked={diet === 'Vegan'}
+              checked={diet === "Vegan"}
             />
             <span className="checkmark"></span>
           </label>
@@ -94,14 +94,14 @@ const GuestForm = () => {
               name="diet"
               value="Pescatarian"
               onChange={onchange}
-              checked={diet === 'Pescatarian'}
+              checked={diet === "Pescatarian"}
             />
             <span className="checkmark"></span>
           </label>
         </div>
         <input
           type="submit"
-          value={editGuest !== null ? 'Update Guest' : 'Add Guest'}
+          value={editGuest !== null ? "Update Guest" : "Add Guest"}
           className="btn"
         />
         {editGuest !== null ? (
