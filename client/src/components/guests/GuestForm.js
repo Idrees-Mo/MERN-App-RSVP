@@ -29,6 +29,8 @@ const GuestForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  // On add/update guest form
   const onsubmit = (e) => {
     e.preventDefault();
     if (editGuest === null) {

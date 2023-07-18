@@ -1,7 +1,8 @@
-import React, { useReducer } from 'react';
-import axios from 'axios';
-import GuestContext from './guestContext';
-import guestReducer from './guestReducer';
+import React, { useReducer } from "react";
+import axios from "axios";
+import GuestContext from "./guestContext";
+import guestReducer from "./guestReducer";
+
 import {
   TOGGLE_GUESTFILTER,
   SEARCH_GUEST,
@@ -13,21 +14,22 @@ import {
   UPDATE_GUEST,
   GET_GUESTS,
   GUESTS_ERROR,
-  CLEAR_GUESTS
-} from '../types';
+  CLEAR_GUESTS,
+} from "../types";
 
 const GuestState = (props) => {
   // Base URL
   // const URL = 'https://rsvp-api.onrender.com';
-  const URL = 'https://anxious-girdle.cyclic.app';
+  const URL = "https://anxious-girdle.cyclic.app";
 
   const intialState = {
     guestFilter: false,
     searchGuest: null,
     editGuest: null,
     guests: [],
-    error: null
+    error: null,
   };
+
   const [state, dispatch] = useReducer(guestReducer, intialState);
 
   // get guests
@@ -36,32 +38,31 @@ const GuestState = (props) => {
       const res = await axios.get(`${URL}/guests`);
       dispatch({
         type: GET_GUESTS,
-        payload: res.data
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
         type: GUESTS_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       });
     }
   };
 
   // Add Guest
-
   const addGuest = async (guest) => {
     const config = {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     };
     try {
       const res = await axios.post(`${URL}/guests`, guest, config);
       dispatch({
         type: ADD_GUEST,
-        payload: res.data
+        payload: res.data,
       });
     } catch (err) {
       dispatch({
         type: GUESTS_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       });
     }
   };
@@ -72,35 +73,34 @@ const GuestState = (props) => {
       await axios.delete(`${URL}/guests/${id}`);
       dispatch({
         type: REMOVE_GUEST,
-        payload: id
+        payload: id,
       });
     } catch (err) {
       dispatch({
         type: GUESTS_ERROR,
-        payload: err.response.msg
+        payload: err.response.msg,
       });
     }
   };
 
   // update guest
-
   const update_Guest = async (guest) => {
     const config = {
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     };
     try {
       const res = await axios.put(`${URL}/guests/${guest._id}`, guest, config);
       dispatch({
         type: UPDATE_GUEST,
-        payload: res.data
+        payload: res.data,
       });
       getGuests();
     } catch (err) {
       dispatch({
         type: GUESTS_ERROR,
-        payload: err.response
+        payload: err.response,
       });
     }
   };
@@ -108,7 +108,7 @@ const GuestState = (props) => {
   //toggle isconfirmed
   const toggleGuestFilter = () => {
     dispatch({
-      type: TOGGLE_GUESTFILTER
+      type: TOGGLE_GUESTFILTER,
     });
   };
 
@@ -116,12 +116,12 @@ const GuestState = (props) => {
   const search_Guest = (guest) => {
     dispatch({
       type: SEARCH_GUEST,
-      payload: guest
+      payload: guest,
     });
   };
   const clearSearchGuest = () => {
     dispatch({
-      type: CLEAR_SEARCH
+      type: CLEAR_SEARCH,
     });
   };
 
@@ -129,19 +129,20 @@ const GuestState = (props) => {
   const edit_Guest = (guest) => {
     dispatch({
       type: EDIT_GUEST,
-      payload: guest
+      payload: guest,
     });
   };
   const clearEdit = () => {
     dispatch({
-      type: CLEAR_EDIT
+      type: CLEAR_EDIT,
     });
   };
   const clearGuests = () => {
     dispatch({
-      type: CLEAR_GUESTS
+      type: CLEAR_GUESTS,
     });
   };
+
   return (
     <GuestContext.Provider
       value={{
@@ -160,7 +161,7 @@ const GuestState = (props) => {
         search_Guest,
         clearSearchGuest,
         getGuests,
-        clearGuests
+        clearGuests,
       }}
     >
       {props.children}
